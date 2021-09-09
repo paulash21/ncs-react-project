@@ -10,7 +10,7 @@ const store = ConfigureStore();
 class App extends Component {
     render() {
         return (
-            <Provider store={store}></Provider>
+            <Provider store={store}>
             <BrowserRouter>
                 <div className="App">
                     <Main />
