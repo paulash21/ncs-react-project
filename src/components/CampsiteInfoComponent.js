@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
 import { baseUrl } from '../shared/baseUrl';
-import { FadeTransform, Fade, Stagger } from 'react-animation-components';
+import { FadeTransform, Fade, Loop, Stagger } from 'react-animation-components';
 
 const required = val => val && val.length;
 const maxLength = len => val => !val || (val.length <= len);
@@ -140,9 +140,13 @@ class CommentForm extends Component {
     render() {
         return (
         <React.Fragment>
-            <Button outline onClick={this.toggleModal}>
-                <i class="fa fa-pencil fa-lg"></i> Submit Comment
-            </Button>
+            <Loop in iterations={5.5}>
+                <Fade in>
+                    <Button outline onClick={this.toggleModal}>
+                        <i class="fa fa-pencil fa-lg"></i> Submit Comment
+                    </Button>
+                </Fade>
+            </Loop>
 
             <Modal isOpen={this.state.isModalOpen} toggle={this.toggleModal}>
                     <ModalHeader toggle={this.toggleModal}>Submit Comment</ModalHeader>
