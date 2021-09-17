@@ -81,7 +81,7 @@ class Main extends Component {
                         </Switch>
                     </CSSTransition>
                 </TransitionGroup>
-                <Footer />            
+                <Footer />         
             </div>
         );
     };
